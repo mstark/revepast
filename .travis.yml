@@ -1,6 +1,6 @@
-bundler_args: --without development
+bundler_args: --without production
 gemfile:
-  - Gemfile
+  - Gemfile.lock
   - Gemfile.rack-1.3.x
 language: ruby
 rvm:
