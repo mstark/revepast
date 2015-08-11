@@ -35,10 +35,10 @@ module Revepast
 
 				items = Hash.new { |h, k| h[k] = 0 }
 				matches.each do |name, count|
-					items[name.strip] += count.to_i or 1
+					items[name.strip] += count.to_i
 				end
 				matches2.each do |name, count|
-					items[name.strip] += count.to_i or 1
+					items[name.strip] += count.to_i
 				end
 				matches3.each do |res|
 					items[res[0].strip] += 1

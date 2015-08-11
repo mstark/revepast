@@ -14,7 +14,6 @@ module Revepast
 			end
 
 			def parse(str)
-				pattern = /^(\S+), ?([\S ]+)$/
 		    	ammo_pattern = /^([\S ]+), ?([\S ]+)$/
 				blacklist = ['[empty high slot]',
                  			 '[empty low slot]',
@@ -26,7 +25,7 @@ module Revepast
 					ship = str.lines.first.match(ammo_pattern)[1].tr('[]', '')
 				 	fit_name = str.lines.first.match(ammo_pattern)[2].tr('[]', '')
 				else
-					raise "Invalid EFT title line"
+					puts "Invalid EFT title line"
 				end
 				matches, bad_lines = @Utils.regex_match_lines(ammo_pattern, str.lines[1..-1])
 				matches2, bad_lines2 = @Utils.parse_listing(bad_lines)

@@ -1,6 +1,14 @@
-bundler_args: --without development
+bundler_args: "--without development"
 gemfile:
-  - Gemfile
+- Gemfile
 language: ruby
 rvm:
-  - 2.2.2
+- 2.2.2
+deploy:
+  provider: rubygems
+  api_key:
+    secure: mxAtVmz9APuDI6eYo445qpO2n+bl/M7jzVBln7k7iPSuLUhKt/pJZhFm/nf3GRq94wmssosSvdGcuEAGIOEeIixNxgei9zgaWJ7sZkZEXwefbX3KxW9EvupcADEbUebRfbkc9q2uj3+D2TRg0a9F8L3rP2Df3M34obBMQHWVpIkjKiXtN2ummA7zBHXAF7oj2bNRdoBLW4YNqWjCFqmqkv5tzqY/q+3R6h0/yyYpD91DLMpkLu35/X7kN0m+RnvELdlAtmKiQmLBG1mQh3y4BS94RBHyiciRXC7Ro9++rwJMzFYDEJQwcGOfwj9IKFZzZbATyUX9R5JBgyVJuZBu9qTJs0ktkw5qNqMjJiv/A+IzvUQ6ONMY+MPVIHO4PeHXYXYhUDljTdjbUw8OKmrhvrM/qN7tur+uA50ffzgJzFFBW7guapnn9KgonfWY8oeiNRHmawy61AumsVaDxKrw/k+DkmV+6SxUxCAmEqShdnUKRlyNN1Mv5uu0x8gXQMTrxrwzHcVzRUaaN3WSlTqBlZJQWO7uWLgUwi8tPtxLFN3tq6hadq6dcKTzySiELQ6O/W5a66+5BFXDmhJL65gFDjV8r6Uw/LVTRmSkp6YOeaGYA3Kxlp/4QGAPPeWirye5r/eLqmsLePN0Eg5L2fuKFijmMVbE6rBJzZHSMNCzwhw=
+  gem: revepast
+  on:
+    tags: true
+    repo: Mekaret/revepast
