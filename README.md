@@ -5,6 +5,7 @@
 # Revepast
 
 A ruby library to help parse various things that are copy/pastable from the Eve Online UI.
+Largely inspired from [Evepaste](https://github.com/evepraisal/evepaste).
 
 This is currently a **work in progress**. 
 
