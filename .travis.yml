@@ -11,4 +11,4 @@ deploy:
   gem: revepast
   on:
     tags: true
-    repo: Mekaret/revepast
+    repo: iceprod/revepast

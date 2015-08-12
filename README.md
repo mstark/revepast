@@ -1,6 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/revepast.png)](http://badge.fury.io/rb/revepast)
 [![Coverage Status](https://coveralls.io/repos/Mekaret/revepast/badge.svg?branch=master&service=github)](https://coveralls.io/github/Mekaret/revepast?branch=master)
-[![Build Status](https://travis-ci.org/Mekaret/revepast.svg?branch=master)](https://travis-ci.org/Mekaret/revepast)
+[![Build Status](https://travis-ci.org/IceProd/revepast.svg?branch=master)](https://travis-ci.org/IceProd/revepast)
 
 # Revepast
 
