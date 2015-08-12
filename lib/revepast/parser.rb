@@ -1,5 +1,7 @@
 module Revepast
 	module Parser
+		require "revepast/parser/eft"
+		require "revepast/parser/cargo_scan"
 		class Utils
 			def sanitize(str)
 				result = []
@@ -39,7 +41,7 @@ module Revepast
 				matches3, bad_lines3 = regex_match_lines(listing_re3, bad_lines2)
 
 				items = Hash.new { |h, k| h[k] = 0 }
-				matches.each do |name, count|
+				matches.each do |count, name|
 					items[name.strip] += count.to_i
 				end
 				matches2.each do |name, count|

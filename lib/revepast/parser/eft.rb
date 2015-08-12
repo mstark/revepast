@@ -6,14 +6,14 @@ module Revepast
 
 			attr_reader :result, :bad_lines
 
-			def initialize(str)
+			def initialize
 				@Utils = Utils.new
 				@result = {}
 				@bad_lines = []
-				result = parse(str)
+				result = parse
 			end
 
-			def parse(str)
+			def parse
 		    	ammo_pattern = /^([\S ]+), ?([\S ]+)$/
 				blacklist = ['[empty high slot]',
                  			 '[empty low slot]',
@@ -21,7 +21,7 @@ module Revepast
                 			 '[empty rig slot]',
                  			 '[empty subsystem slot]']
 
-                 sanitize = @Utils.sanitize(str)
+                 sanitize = @Utils.sanitize(Revepast.str)
                  lines = []
                  sanitize.each do |line|
                  	unless blacklist.include? line.downcase
@@ -34,8 +34,7 @@ module Revepast
 					ship = lines.first.match(ammo_pattern)[1].tr('[]', '')
 				 	fit_name = lines.first.match(ammo_pattern)[2].tr('[]', '')
 				rescue
-					$stderr.print "Invalid EFT title line = " + lines.first
-					raise
+					raise Unparsable.new("Invalid EFT title line")
 				end
 				matches, bad_lines = @Utils.regex_match_lines(ammo_pattern, lines[1..-1])
 				matches2, bad_lines2 = @Utils.parse_listing(bad_lines)
