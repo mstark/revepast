@@ -2,7 +2,14 @@ module Revepast
 	module Parser
 		class Utils
 			def sanitize(str)
-				return str.gsub /^$\n/, ''
+				result = []
+				str.each_line do |line|
+					line = line.chomp.gsub /^$\n/, ''
+					unless line.nil? || line == ""
+						result << line
+					end
+				end
+				return result
 			end
 
 			def regex_match_lines(regex, lines)
@@ -10,10 +17,8 @@ module Revepast
 				bad_lines = Array.new
 				lines.each do |line|
 					if line.match(regex)
-						# p "--#{line.chomp}"
 						a = line.match(regex)
 						matches.push(a.captures)
-						# p matches
 					else
 						bad_lines.push(line.chomp)
 					end

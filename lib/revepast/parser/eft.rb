@@ -10,7 +10,7 @@ module Revepast
 				@Utils = Utils.new
 				@result = {}
 				@bad_lines = []
-				result = parse(@Utils.sanitize(str))
+				result = parse(str)
 			end
 
 			def parse(str)
@@ -21,13 +21,23 @@ module Revepast
                 			 '[empty rig slot]',
                  			 '[empty subsystem slot]']
 
-				if str.lines.first =~ /^(\[).*(\])$/
-					ship = str.lines.first.match(ammo_pattern)[1].tr('[]', '')
-				 	fit_name = str.lines.first.match(ammo_pattern)[2].tr('[]', '')
-				else
-					puts "Invalid EFT title line"
+                 sanitize = @Utils.sanitize(str)
+                 lines = []
+                 sanitize.each do |line|
+                 	unless blacklist.include? line.downcase
+                 		lines << line
+                 	end
+                 end
+
+				begin 
+					lines.first =~ /^(\[).*(\])$/
+					ship = lines.first.match(ammo_pattern)[1].tr('[]', '')
+				 	fit_name = lines.first.match(ammo_pattern)[2].tr('[]', '')
+				rescue
+					$stderr.print "Invalid EFT title line = " + lines.first
+					raise
 				end
-				matches, bad_lines = @Utils.regex_match_lines(ammo_pattern, str.lines[1..-1])
+				matches, bad_lines = @Utils.regex_match_lines(ammo_pattern, lines[1..-1])
 				matches2, bad_lines2 = @Utils.parse_listing(bad_lines)
 				
 				@bad_lines = bad_lines2

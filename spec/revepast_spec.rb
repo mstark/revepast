@@ -26,6 +26,7 @@ Medium Energy Neutralizer II
 Medium Anti-EM Screen Reinforcer I
 Medium Core Defense Field Extender I
 Medium Core Defense Field Extender I
+[empty rig slot]
 
 Hornet II x5
 Hornet EC-300 x5
