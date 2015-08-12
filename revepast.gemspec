@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "A Ruby library to help parse various things that are copy/pastable from the Eve Online"
   spec.description   = "Ruby library to help parse various things that are copy/pastable from the Eve Online"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Mekaret/revepast"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
