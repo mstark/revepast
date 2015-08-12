@@ -1,9 +1,6 @@
 require "revepast/version"
 
 module Revepast
-	class Error < StandardError
-	end
-
 	module Parser
 		autoload :Parser, 'revepast/parser'
 	end
@@ -15,9 +12,19 @@ module Revepast
 		attr_reader :result, :bad_lines
 
 		def initialize(str)
-			eft_parse = EFT.new(str)
-			@result = eft_parse.result
-			@bad_lines = eft_parse.bad_lines
+			parser_table = [ EFT.new(str) ]
+			parser_table.each do |parser|
+				begin
+					parse = parser
+					if parse then
+						@result = parse.result
+						@bad_lines = parse.bad_lines
+					end
+				rescue
+					p "shit"
+					0
+				end
+			end
 		end
 	end
 
@@ -25,8 +32,8 @@ module Revepast
 		attr_reader :result
 		def initialize (str)
 			@result = Revepast::Sort.new(str)
-			p result.result
-			p result.bad_lines
+			puts JSON.pretty_generate(result.result)
+			puts result.bad_lines
 		end
 	end
 
