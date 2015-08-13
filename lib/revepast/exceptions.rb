@@ -1,9 +1,9 @@
 module Revepast
-	class Unparsable < StandardError
-		attr_reader :object
+  class Unparsable < StandardError
+    attr_reader :object
 
-		def initialize(object)
-			@object = object			
-		end
-	end
+    def initialize(object)
+      @object = object
+    end
+  end
 end
