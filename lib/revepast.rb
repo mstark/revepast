@@ -17,13 +17,12 @@ module Revepast
             result = parse.result
             bad_lines = parse.bad_lines
             @result = [classname, result, bad_lines]
-            return
-              end
+            return @result
+          end
         rescue Unparsable
-
         end
       end
-      fail Unparsable.new('No valid parser found for the givin text.')
+      fail Unparsable, 'No valid parser found for the givin text.'
     end
   end
 end

@@ -7,15 +7,15 @@ module Revepast
       attr_reader :result, :bad_lines
 
       def initialize
-        @Utils = Utils.new
+        @utils = Utils.new
         @result = {}
         @bad_lines = []
-        result = parse
+        parse
       end
 
       def parse
-        lines = @Utils.sanitize(Revepast.str)
-        @result, @bad_lines = @Utils.parse_listing(lines)
+        lines = @utils.sanitize(Revepast.str)
+        @result, @bad_lines = @utils.parse_listing(lines)
       end
     end
   end

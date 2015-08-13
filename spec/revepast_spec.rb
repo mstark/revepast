@@ -35,7 +35,7 @@ Republic Fleet Phased Plasma M x1500
 Republic Fleet EMP M x1500
 Barrage M x600
 Nanite Repair Paste x600
-"
+",
                            )
     puts JSON.pretty_generate(a.result)
   end
@@ -48,7 +48,7 @@ Nanite Repair Paste x600
       Revepast::Parse.new('Cargo Scanner II x10'),
       Revepast::Parse.new('Cargo Scanner I x 10'),
       Revepast::Parse.new('Cargo Scanner II 10'),
-      Revepast::Parse.new('Cargo Scanner II')
+      Revepast::Parse.new('Cargo Scanner II'),
     ]
     array.each do |test|
       puts JSON.pretty_generate(test.result)
