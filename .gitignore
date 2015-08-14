@@ -12,3 +12,4 @@ pkg/*
 bin/
 .pryrc
 .rspec
+.coveralls.yml
