@@ -1,6 +1,5 @@
 require 'revepast'
-require 'coveralls'
-Coveralls.wear!
+require 'json'
 
 RSpec.describe Revepast do
   it 'Parse an EFT file' do

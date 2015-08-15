@@ -10,7 +10,6 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls'
   gem 'rspec'
 end
 
