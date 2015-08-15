@@ -1,6 +1,6 @@
 [![Stories in Ready](https://badge.waffle.io/IceProd/revepast.png?label=ready&title=Ready)](https://waffle.io/IceProd/revepast)
 [![Gem Version](https://badge.fury.io/rb/revepast.png)](http://badge.fury.io/rb/revepast)
-[![Coverage Status](https://coveralls.io/repos/IceProd/revepast/badge.svg?branch=master&service=github)](https://coveralls.io/github/IceProd/revepast?branch=master)
+[![Dependency Status](https://gemnasium.com/IceProd/revepast.svg)](https://gemnasium.com/IceProd/revepast)
 [![Build Status](https://travis-ci.org/IceProd/revepast.svg?branch=master)](https://travis-ci.org/IceProd/revepast)
 [![security](https://hakiri.io/github/IceProd/revepast/master.svg)](https://hakiri.io/github/IceProd/revepast/master)
 
