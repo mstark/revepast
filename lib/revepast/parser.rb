@@ -1,7 +1,5 @@
 module Revepast
   module Parser
-    require 'revepast/parser/eft'
-    require 'revepast/parser/cargo_scan'
     class Utils
       def sanitize(str)
         result = []
