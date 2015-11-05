@@ -15,9 +15,9 @@ module Revepast
 
       def parse
         lines = @utils.sanitize(Revepast.str)
-        # @result, @bad_lines = @utils.parse_listing(lines)
-        @matches, @bad_lines = @utils.regex_match_lines(cargo_scan_regex, lines)
-        @result = results
+        @result, @bad_lines = @utils.parse_listing(lines)
+        # @matches, @bad_lines = @utils.regex_match_lines(cargo_scan_regex, lines)
+        # @result = results
       end
 
       def results
@@ -30,7 +30,7 @@ module Revepast
       end
 
       def cargo_scan_regex
-        Regexp.new(/\A(?<quantity>[\d,'\.]+) (?<name>[\S ]+)\z/)
+        Regexp.new(/\A(?<quantity>[\d,'\.]+) ?(?<name>[\S ]+)\z/)
       end
     end
   end

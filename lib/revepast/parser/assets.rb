@@ -24,7 +24,7 @@ module Revepast
         @matches.map do |match|
           {
             'name' => match[0],
-            'quantity' => quantity_to_i(match[1] || 1),
+            'quantity' => Utils.quantity_to_i(match[1] || 1),
             'group' => match[2],
             'category' => match[3],
             'size' => match[4],
@@ -34,10 +34,6 @@ module Revepast
             'tech level' => match[8]
           }
         end
-      end
-
-      def quantity_to_i(quantity)
-        quantity.gsub(/[\.,[[:space:]]\']/, "").to_i
       end
 
       def assets_regex

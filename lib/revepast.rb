@@ -4,13 +4,14 @@ require 'revepast/parser'
 require 'revepast/parser/assets'
 require 'revepast/parser/eft'
 require 'revepast/parser/cargo_scan'
+require 'revepast/parser/contract'
 
 module Revepast
   class << self; attr_accessor :str; end
 
   class Parse
     attr_reader :result
-    PARSER_TABLE = %w(Assets EFT CargoScan)
+    PARSER_TABLE = %w(Assets EFT CargoScan Contract)
 
     def initialize(str)
       Revepast.str = str
@@ -21,7 +22,7 @@ module Revepast
           if parse
             result = parse.result
             bad_lines = parse.bad_lines
-            next if result.size.zero?
+            next if result.size.zero? || !bad_lines.size.zero?
             @result = [classname, result, bad_lines]
             return @result
           end

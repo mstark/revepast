@@ -23,6 +23,10 @@ module Revepast
         [matches, bad_lines]
       end
 
+      def self.quantity_to_i(quantity)
+        quantity.gsub(/[\.,[[:space:]]\']/, "").to_i
+      end
+
       def parse_listing(lines)
         # 10 x Cargo Scanner II | 10x Cargo Scanner II | 10 Cargo Scanner II
         listing_re = /^([\d,'\.]+?) ?x? ([\S ]+)$/
