@@ -1,5 +1,5 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'test_frameworks'
 
 require 'revepast'
 
