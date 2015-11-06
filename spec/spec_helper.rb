@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'revepast'
 
 RSpec.configure do |config|
